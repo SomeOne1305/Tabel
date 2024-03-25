@@ -1,5 +1,5 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import { Loader, Navigation } from "./components";
+import { Controller, Loader, Navigation } from "./components";
 function App() {
   const navigation = useNavigation()
   return (
@@ -7,9 +7,10 @@ function App() {
       <Navigation />
       <div className="container">
         <div className="py-6"></div>
-        <div className="relative overflow-x-auto">
+        <Controller/>
+        <div className="relative overflow-x-auto rounded-t-xl">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-xs rounded-t-xl text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   #
@@ -28,7 +29,7 @@ function App() {
             <tbody>
               {
                 navigation.state === "loading" ?
-                <Loader/>
+                <tr><Loader/></tr>
                 : <Outlet/>
               }
             </tbody>
