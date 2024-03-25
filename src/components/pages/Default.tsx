@@ -13,7 +13,9 @@ const Default = () => {
     }
   })
   
-  console.log(data);
+  console.log(fetcher.defaults.headers.common.Authorization);
+  console.log(localStorage.getItem('token'));
+  
   
   if (isLoading) {
     return <div>Loading...</div>

@@ -1,3 +1,4 @@
+import React from 'react'
 export interface ICategory{
   id:number,
   name:string
@@ -11,4 +12,9 @@ export interface IResponse{
   message:null|any,
   errorResponse:null|any,
   data:ICategory[]
+}
+
+export interface IContext{
+  theme:"dark"|"light",
+  setTheme:React.Dispatch<React.SetStateAction<"light"|"dark">>
 }

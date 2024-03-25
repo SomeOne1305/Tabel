@@ -9,15 +9,17 @@ import './index.css'
 
 //Routes
 import router from './Router'
+import { ContextComponent } from './context'
 
 // Init react-query
 const client = new QueryClient()
 
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
-      <RouterProvider router={router}/>
+      <ContextComponent>
+        <RouterProvider router={router}/>
+      </ContextComponent>
     </QueryClientProvider>
   </React.StrictMode>,
 )
